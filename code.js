@@ -4,13 +4,14 @@ function getComputerChoice(){
     return cpuChoice = gestures[choiceNum];
 }
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection, counter){
     switch (playerSelection){
         case 'rock': 
         if (computerSelection === 'paper'){
             console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
         } else if (computerSelection === 'scissors'){
             console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+            return scoreCount += 1;
         }
         else{
             console.log(`You tied with ${playerSelection} and ${computerSelection}`)
@@ -22,6 +23,7 @@ function playRound(playerSelection, computerSelection){
             console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
         } else if (computerSelection === 'rock'){
             console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+            return scoreCount += 1;
         }
         else{
             console.log(`You tied with ${playerSelection} and ${computerSelection}`)
@@ -33,6 +35,7 @@ function playRound(playerSelection, computerSelection){
             console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
         } else if (computerSelection === 'paper'){
             console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+            return scoreCount += 1;
         }
         else{
             console.log(`You tied with ${playerSelection} and ${computerSelection}`)
@@ -47,13 +50,12 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
     for (let i = 0; i < 5; i++){
+        let computerSelection = getComputerChoice();
         let playerSelection = prompt("Type in: Rock, Paper or Scissors", "").toLowerCase();
         playRound(playerSelection, computerSelection);
     }
 }
 
-//alert("Welcome to Rock, Paper Scissors!")
-
-let computerSelection = getComputerChoice();
-
+let scoreCount = 0;
 game();
+console.log(`Total score: ${scoreCount}/5!`);
