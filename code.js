@@ -46,10 +46,14 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    
+    for (let i = 0; i < 5; i++){
+        let playerSelection = prompt("Type in: Rock, Paper or Scissors", "").toLowerCase();
+        playRound(playerSelection, computerSelection);
+    }
 }
 
 //alert("Welcome to Rock, Paper Scissors!")
-let playerSelection = prompt("Type in: Rock, Paper or Scissors", "").toLowerCase();
+
 let computerSelection = getComputerChoice();
 
+game();
