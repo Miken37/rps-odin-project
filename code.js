@@ -8,42 +8,42 @@ function playRound(playerSelection, computerSelection){
     switch (playerSelection){
         case 'rock': 
         if (computerSelection === 'paper'){
-            console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+           document.querySelector("p").textContent =`You lose! ${computerSelection} beats ${playerSelection}`;
         } else if (computerSelection === 'scissors'){
-            console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+            document.querySelector("p").textContent = `You win! ${playerSelection} beats ${computerSelection}`;
             
         }
         else{
-            console.log(`You tied with ${playerSelection} and ${computerSelection}`)
+            document.querySelector("p").textContent =`You tied with ${playerSelection} and ${computerSelection}`;
         }
         break;
 
         case 'paper': 
         if (computerSelection === 'scissors'){
-            console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+            document.querySelector("p").textContent =`You lose! ${computerSelection} beats ${playerSelection}`;
         } else if (computerSelection === 'rock'){
-            console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+            document.querySelector("p").textContent =`You win! ${playerSelection} beats ${computerSelection}`;
             
         }
         else{
-            console.log(`You tied with ${playerSelection} and ${computerSelection}`)
+            document.querySelector("p").textContent =`You tied with ${playerSelection} and ${computerSelection}`;
         }
         break;    
 
         case 'scissors': 
         if (computerSelection === 'rock'){
-            console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+            document.querySelector("p").textContent =`You lose! ${computerSelection} beats ${playerSelection}`;
         } else if (computerSelection === 'paper'){
-            console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+            document.querySelector("p").textContent =`You win! ${playerSelection} beats ${computerSelection}`;
             
         }
         else{
-            console.log(`You tied with ${playerSelection} and ${computerSelection}`)
+            document.querySelector("p").textContent =`You tied with ${playerSelection} and ${computerSelection}`;
         }
         break;
-
+        //Should never hit default state anymore
         default:
-            console.log("You did not pick one of the three options. :(")
+            document.querySelector("p").textContent ="You did not pick one of the three options. :(";
     }
 
 }

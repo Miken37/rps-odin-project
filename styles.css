@@ -24,9 +24,27 @@ body {
     border: solid 2px black;
     border-radius: 8px;
     background-color: greenyellow;
-    min-width: 350px;
+    min-width: 500px;
     margin: 50px;
     text-align: center;
+}
+
+.container-images{
+    border: solid 2px black;
+    border-radius: 8px;
+    background-color: rgb(65, 65, 65);
+    min-width: 1000px;
+    min-height: 500px;
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.container-choice-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 h1{
@@ -35,10 +53,19 @@ h1{
 
 }
 
+h3{
+    color: white;
+}
+
 button{
     min-width: 100px;
     font-size: 20px;
     font-weight: 800;
+}
+
+p {
+    font-weight: 800;
+    font-size: 25px;
 }
 
 .rock{
