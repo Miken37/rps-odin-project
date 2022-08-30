@@ -12,12 +12,21 @@ body {
     margin-right: 500px;
     background-color: burlywood;
 }
-.container{
+.container-buttons{
     border: inset 2px black;
     display: flex;
     justify-content: space-between;
     min-width: 350px;
     margin: 50px;
+}
+
+.container-results{
+    border: solid 2px black;
+    border-radius: 8px;
+    background-color: greenyellow;
+    min-width: 350px;
+    margin: 50px;
+    text-align: center;
 }
 
 h1{
