@@ -1,3 +1,43 @@
 body {
-    background-color: gray;
+    background-color: rgb(77, 77, 77);
+    
+}
+.containAll{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border: black solid;
+    align-items: center;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: burlywood;
+}
+.container{
+    border: inset 2px black;
+    display: flex;
+    justify-content: space-between;
+    min-width: 350px;
+    margin: 50px;
+}
+
+h1{
+    color: black;
+    text-shadow: 0px 3px white;
+
+}
+
+button{
+    min-width: 100px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.rock{
+    background: lightslategray;
+}
+.paper{
+    background: antiquewhite;
+}
+.scissors{
+    background: red;
 }
