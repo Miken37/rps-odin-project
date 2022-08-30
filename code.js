@@ -4,17 +4,19 @@ function getComputerChoice(){
     return cpuChoice = gestures[choiceNum];
 }
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection, scoreCountPlayer, scoreCountCPU){
     switch (playerSelection){
         case 'rock': 
         if (computerSelection === 'paper'){
             document.querySelector(".cpu-card").setAttribute("src","images/Card-paper.png");
             document.querySelector("h2").textContent = "You lose...";
             document.querySelector(".container-images").style.backgroundColor = "red";
+            return cpuScore += 1;
         } else if (computerSelection === 'scissors'){
             document.querySelector(".cpu-card").setAttribute("src","images/Card-scissors.png");
             document.querySelector("h2").textContent = "You win!";
             document.querySelector(".container-images").style.backgroundColor = "green";
+            return playerScore += 1;
         }
         else{
             document.querySelector(".cpu-card").setAttribute("src","images/Card-rock.png");
@@ -28,10 +30,12 @@ function playRound(playerSelection, computerSelection){
             document.querySelector(".cpu-card").setAttribute("src","images/Card-scissors.png");
             document.querySelector("h2").textContent = "You lose...";
             document.querySelector(".container-images").style.backgroundColor = "red";
+            return cpuScore += 1;
         } else if (computerSelection === 'rock'){
             document.querySelector(".cpu-card").setAttribute("src","images/Card-rock.png");
             document.querySelector("h2").textContent = "You win!";
             document.querySelector(".container-images").style.backgroundColor = "green";
+            return playerScore += 1;
         }
         else{
             document.querySelector(".cpu-card").setAttribute("src","images/Card-paper.png");
@@ -45,10 +49,12 @@ function playRound(playerSelection, computerSelection){
             document.querySelector(".cpu-card").setAttribute("src","images/Card-rock.png");
             document.querySelector("h2").textContent = "You lose...";
             document.querySelector(".container-images").style.backgroundColor = "red";
+            return cpuScore += 1;
         } else if (computerSelection === 'paper'){
             document.querySelector(".cpu-card").setAttribute("src","images/Card-paper.png");
             document.querySelector("h2").textContent = "You win!";
             document.querySelector(".container-images").style.backgroundColor = "green";
+            return playerScore += 1;
             
         }
         else{
@@ -63,38 +69,56 @@ function playRound(playerSelection, computerSelection){
     }
 
 }
-
-function cpuCard(computerSelection){
-
-}
+let playerScore = 0;
+let cpuScore = 0;
 
 const rock = document.querySelector(".rock")
+const scissors = document.querySelector(".scissors")
+const paper = document.querySelector(".paper")
+
 rock.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "rock";
     document.querySelector(".player-card").setAttribute("src","images/Card-rock.png");
-    
     playRound(playerSelection, computerSelection)
+    document.querySelector(".player-score").textContent = playerScore;
+    document.querySelector(".cpu-score").textContent = cpuScore;
+    if (playerScore == 5){
+        alert("You win the game! Refresh to play again.");
+    } else if (cpuScore == 5){
+        alert("You lost... refresh to play again.");
+    }
 });
 
-const paper = document.querySelector(".paper")
 paper.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "paper";
     document.querySelector(".player-card").setAttribute("src","images/Card-paper.png");
     playRound(playerSelection, computerSelection)
+    console.log(`Player:  ${playerScore}`)
+    document.querySelector(".player-score").textContent = playerScore;
+    document.querySelector(".cpu-score").textContent = cpuScore;
+    if (playerScore == 5){
+        alert("You win the game! Refresh to play again.");
+    } else if (cpuScore == 5){
+        alert("You lost... refresh to play again.");
+    }
 });
 
-const scissors = document.querySelector(".scissors")
 scissors.addEventListener("click", () => {
     let computerSelection = getComputerChoice();
     let playerSelection = "scissors";
     document.querySelector(".player-card").setAttribute("src","images/Card-scissors.png");
     playRound(playerSelection, computerSelection)
+    console.log(`Player:  ${playerScore}`)
+    document.querySelector(".player-score").textContent = playerScore;
+    document.querySelector(".cpu-score").textContent = cpuScore;
+    if (playerScore == 5){
+        alert("You win the game! Refresh to play again.");
+    } else if (cpuScore == 5){
+        alert("You lost... refresh to play again.");
+    }
 });
-
-
-
 
 
 
